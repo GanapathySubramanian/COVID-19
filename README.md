@@ -1,6 +1,4 @@
 # COVID-19
-
-# COVID-19 using MySQL, Php.
    A web-based application that helps the users to view the covid status and the user can log in only when the admin accepts their request 
    the admin will add the districts wise details as csv file or manual the state wise and country wise details will be calculated based on district wise and that details will       be viewed by the users and the user can  edit their account.
 
