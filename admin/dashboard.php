@@ -13,5 +13,4 @@
                 </div>      
 </div>   
 
-<?php include('partials/chart.php');?>
 <?php include('partials/admin-footer.php');?>
