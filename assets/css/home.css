@@ -1,0 +1,66 @@
+html,body{
+    width:100%;
+    height:100%;
+    padding:0%;
+    margin:0%;
+    font-family: 'Poppins', sans-serif;
+    overflow-x:hidden;
+}
+
+
+.sym-img{
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width: 600px) {
+    .sym-img{
+        width: 100%;
+        height: 40%;
+    }
+  }
+
+  .about-section{
+        background-color: #8cc4df;
+        color: #fff;
+  }
+  
+/*--- Start Parallax Style --*/
+
+.parallax {
+	background: url("../img/map.jpg") repeat fixed 100% ;
+	text-align: center;
+   
+}
+.parallax-inner {
+	padding-top: 20%;
+	padding-bottom: 20%;
+  font-size: 20px;
+
+}
+/*--- End Parallax Style --*/
+	
+
+/* ===== FOOTER =====*/
+.footer{
+background-color: #0E2431;
+color: #fff;
+text-align: center;
+font-weight: 600;
+padding: 2rem 0;
+margin-right:-25px;
+}
+.footer_title{
+font-size: 2rem;
+margin-bottom: 2rem;
+}
+.footer_social{
+margin-bottom: 2rem;
+}
+.footer_icon{
+font-size: 1.5rem;
+color: #fff;
+margin: 0 1rem;
+}
+.footer_icon:hover{
+  color:#048dfe;
+}

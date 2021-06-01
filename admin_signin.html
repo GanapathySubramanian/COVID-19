@@ -1,0 +1,72 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--Css Stylesheets-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="assets/css/admin_signin.css">
+        
+        <!-- =====FONT AWESOME===== -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+        <!-- =====GOOGLE FONT===== -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+        
+        <!--Bootstrap-->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!--Shortcut-->
+        <link rel="shortcut icon" href="assets/img/logo.png">
+        <title>COVID-19 | Signin</title>
+</head>
+<body>
+    <!-- Back Navigation -->
+    <nav class="navbar navbar-light bg-light sticky-top">
+        <a class="navbar-brand" href="index.html"><i class="fas fa-backward"></i> Back</a>
+    </nav>
+
+     <div class="signin-menu">
+		<div class="signin-formbox">
+		    <center>
+                <h1 class="signin-header">ADMIN LOGIN</h1>
+            </center>
+
+            <form action="admin/partials/admin_db.php" method="post" id="login1" class="signin-input-group" autocomplete="off">	
+		        <input type="text" name="userid" class="signin-input-field" placeholder="User Id" required>
+
+                <span class="eye" onclick="myFunction1()">
+                    <i id="hide1"class="fa fa-eye" style="margin-bottom: auto;color:#4723D9;"></i>
+                    <i id="hide2"class="fa fa-eye-slash" style="margin-bottom: auto;color:#4723D9;"></i>
+                </span>
+                
+                <input type="password" name="password" class="signin-input-field" id="myinput1" placeholder="Enter Password" ><br><br>
+                
+                <center>
+                    <button type="submit" name="admin_login" style="outline:none" onclick="validate()" class="signin-submit">Admin Login</button>
+                </center>                
+		    </form>
+		</div>
+	</div>
+
+    <script>
+        function myFunction1(){
+            var x = document.getElementById("myinput1");
+            var y = document.getElementById("hide1");
+            var z = document.getElementById("hide2");
+            if(x.type === 'password'){
+                x.type = "text";
+                y.style.display="block";
+                z.style.display="none";
+            }
+            else{
+                x.type = "password";
+                y.style.display="none";
+                z.style.display="block";
+            }
+        }
+        </script>
+</body>
+</html>

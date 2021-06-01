@@ -1,0 +1,98 @@
+body{
+    background-color: #4723D9;
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+}
+.signin-menu{
+    background-color:#4723D9;
+    height:100%;
+    width:100%;
+}
+.signin-formbox{
+    font-family: sans-serif;
+    height: 380px;
+    width: 430px;
+    position: relative;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 9px #ff61241f;
+}
+
+.signin-input-group{
+    top:140px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.signin-input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top:0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none; 
+    background: transparent;
+}
+.signin-submit{
+    width: 85%;
+    padding: 5px 30px;
+    cursor: pointer;
+    display: block;
+    margin:auto;
+    background: linear-gradient(to right,#4723D9,#4712D9);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.signin-header{
+    color:#4723D9;
+    font-size:40px;
+    font-weight: bold;
+    margin-top:50px;
+}
+h1{
+    font-family: sans-serif;
+    color:#4723D9;
+}
+#login1{
+    left: 50px;
+}
+.eye{
+    position: absolute;	
+    margin-top: 10px;
+    margin-left:270px;
+    cursor:pointer;
+}
+#hide1{
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+.signin-formbox{
+    font-family: sans-serif;
+    height: 380px;
+    width: 330px;
+    position: relative;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 9px #ff61241f;
+}
+#login1{
+    left: 20px;
+}
+
+ .signin-header{
+    color:#4723D9;
+    font-size:40px;
+    font-weight: bold;
+    margin-top:70px;
+}
+
+}
