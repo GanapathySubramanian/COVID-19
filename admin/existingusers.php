@@ -58,7 +58,7 @@
                        <input type='hidden' name='user_id' value='<?php echo $row['user_id'] ?>'/>
                        <?php
 					    if($row['status']==1){
-                            echo "<input id='btn' class='btn btn-primary btn-sm' type='submit' style='outline:none' name='user_edit'  value='EDIT' onclick='return Edit_user();'/>";
+                             echo "<input  class='btn btn-warning ml-2 btn-sm' type='submit' style='outline:none;' name='user_reject'   onclick='return Reject_user();' value='REJECT' />";
                             echo "<input id='btn' class='btn btn-danger ml-2 btn-sm' type='submit' style='outline:none' name='user_delete'  value='DELETE' onclick='return Delete_user();'/>";
 			            }
                         ?>
@@ -72,7 +72,11 @@
 </div>
 <script>
 	function Delete_user(){
-		return confirm('Are You Sure You Want Delete this district');
+		return confirm('Are You Sure You Want Delete this user');
 	}
+	function Reject_user(){
+		return confirm("Are You Sure You Want Reject this user's request");
+	}
+
 	</script>
 <?php include('partials/admin-footer.php');?>
