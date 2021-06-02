@@ -2,7 +2,7 @@
    A web-based application that helps the users to view the covid status and the user can log in only when the admin accepts their request 
    the admin will add the districts wise details as csv file or manual the state wise and country wise details will be calculated based on district wise and that details will       be viewed by the users and the user can  edit their account.
 
-Visit : [Live demo](https://ganapathyda-covid-19.000webhostapp.com/index.html)
+Visit : [Live demo](https://ganapathyda-covid-19.000webhostapp.com/)
 ## Prerequisites
 1. Install XAMPP web server
 2. Any Editor (Preferably VS Code or Brackets Text Editor)
