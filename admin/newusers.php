@@ -61,7 +61,7 @@
 		                        if($row['status']==0)  
                                 {				
                                     echo "<input class='btn btn-success btn-sm' type='submit' style='outline:none' name='user_accept'   value='ACCEPT'/>";
-				                    echo "<input  class='btn btn-danger ml-2 btn-sm' type='submit' style='outline:none;' name='user_reject'   value='REJECT' />";
+				                    echo "<input  class='btn btn-danger ml-2 btn-sm' type='submit' style='outline:none;' name='user_reject'  onclick='return Reject_user();' value='REJECT' />";
 					            }
 				            ?>
 			            </form> 
@@ -71,5 +71,10 @@
                 </table> 
             </div>
 </div>
+    <script>
+	function Reject_user(){
+		return confirm("Are You Sure You Want Reject this user's request");
+	}
+	</script>
 
 <?php include('partials/admin-footer.php');?>
