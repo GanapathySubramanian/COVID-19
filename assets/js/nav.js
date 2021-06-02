@@ -42,18 +42,18 @@ function users() {
     }
 }
 
-     $('#Model_edit_accountant-modelid').on('show.bs.modal', function(event){
-        var button = $(event.relatedTarget)
-        var username = button.data('username')
-        var email = button.data('email')
-        var phone_number = button.data('phone_number')
-        var accountant_id = button.data('subuser_id')
-        var modal = $(this)
-        modal.find('.modal-title').text('EDIT ACCOUNTANT INFORMATION');
-        modal.find('.modal-body #username').val(username);
-        modal.find('.modal-body #email').val(email);
-        modal.find('.modal-body #phone_number').val(phone_number);
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
         modal.find('.modal-body #subuser_id').val(accountant_id);
-        $('#accountant_edit_form').attr('action', 'subuser_edit/'+accountant_id);
-        });
+        
+ 
