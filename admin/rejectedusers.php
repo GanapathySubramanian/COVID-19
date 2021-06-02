@@ -73,7 +73,7 @@
         </div>
     <script>
 	function Delete_user(){
-		return confirm('Are You Sure You Want Delete this district');
+		return confirm('Are You Sure You Want Delete this user');
 	}
 	</script>
 <?php include('partials/admin-footer.php');?>
