@@ -21,13 +21,13 @@
     }
 
 ?>
-<div id="covidstatus">
+<div id="districtstatus">
  
     <nav class="navbar navbar-light">
         <a class="navbar-brand text-primary font-weight-bold" href="#"><h3>District Wise Status</h3></a>
         <form class="d-flex"  action="" method="POST" autocomplete="off">
             <input class="form-control me-2" type="search" name="valueToSearch" placeholder="Value To Search" aria-label="Search">
-            <button class="btn ml-2 search-btn" type="submit" name="search">Search</button>
+            <button class="btn ml-2 btn-primary" type="submit" name="search">Search</button>
         </form>
     </nav>
     <div class="table-responsive">
