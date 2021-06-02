@@ -28,7 +28,7 @@
     <nav class="navbar navbar-light">
         <a class="navbar-brand text-primary font-weight-bold" href="#"><h3>country wise status</h3></a>
         <form class="d-flex">
-            <button type="button" class="btn btn-primary ml-2" name="add_country" data-toggle="modal" data-target="#AdddistrictModal" data-whatever="@mdo">Add country</button>
+            <button type="button" class="btn btn-primary ml-1" name="add_country" data-toggle="modal" data-target="#AdddistrictModal" data-whatever="@mdo">Add country</button>
         </form>
 
         <!-- Add district modal -->
@@ -64,10 +64,13 @@
 
 
         <form class="d-flex"  action="" method="POST" autocomplete="off">
-            <input class="form-control me-2" type="search" name="valueToSearch" placeholder="Value To Search" aria-label="Search">
+            <input class="form-control" type="search" name="valueToSearch" placeholder="Value To Search" aria-label="Search">
             <button class="btn btn-primary ml-2" type="submit" name="search">Search</button>
         </form>
     </nav>
+    <form method="post" class="ml-3" action="partials/admin_db.php">
+		<input type="submit" name="admin_country_export" value="Country report" class="btn btn-success mt-3" />
+	</form>
     <div class="table-responsive">
         <table class="content-table table">
             <thead>
