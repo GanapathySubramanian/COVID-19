@@ -9,9 +9,13 @@
         $active=$active+$row['active'];
         $death=$death+$row['death'];
         $recovered=$recovered+$row['recovered'];
-        $date=$row['updated_at'];
     }
 
+    $date_query= "SELECT updated_at FROM country_cases where updated_at>=CURDATE()";
+    $date_query_run= mysqli_query($con, $date_query);   
+    while($row=mysqli_fetch_array($date_query_run)){
+        $date=$row['updated_at'];
+    }
     ?>
 <div class="row text-center">
     <div class="col-lg-4" id="myitems">
