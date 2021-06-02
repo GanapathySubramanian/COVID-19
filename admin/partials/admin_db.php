@@ -303,8 +303,9 @@ if(isset($_POST["admin_Import"]))
 } 
 
 
+//====================================================For district report download===================================
 // Checking data by post method for downloading data as csv file
-if(isset($_POST["admin_export"])) {
+if(isset($_POST["admin_district_export"])) {
 
 	// Connect to our data base
 
@@ -318,10 +319,79 @@ if(isset($_POST["admin_export"])) {
 	$output = fopen("php://output", "w");
 
 	// Placing data using fputcsv
-	fputcsv($output, array('districts','confirmed','male','female','active','recovered','death'));
+	fputcsv($output, array('state_code','districts','confirmed','male','female','active','recovered','death'));
 
 	// SQL query to fetch data from our table
-	$query = "SELECT districts,confirmed,male,female,active,recovered,death from district_cases";
+	$query = "SELECT state_code,districts,confirmed,male,female,active,recovered,death from district_cases";
+
+	// Result
+	$result = mysqli_query($con, $query);
+
+	while($row = mysqli_fetch_assoc($result)) {
+
+		// Fetching all rows of data one by one
+		fputcsv($output, $row);
+	}
+
+	// Closing tag
+	fclose($output);
+}
+
+
+//====================================================For state report download======================================
+// Checking data by post method for downloading data as csv file
+if(isset($_POST["admin_state_export"])) {
+
+	// Connect to our data base
+
+	// Accept csv or text files
+	header('Content-Type: text/csv; charset=utf-8');
+
+	// Download csv file as coronastatus.csv
+	header('Content-Disposition:attachment; filename=coronastatus.csv');
+
+	// Storing data
+	$output = fopen("php://output", "w");
+
+	// Placing data using fputcsv
+	fputcsv($output, array('country_code','state_code','states','confirmed','male','female','active','recovered','death'));
+
+	// SQL query to fetch data from our table
+	$query = "SELECT country_code,state_code,states,confirmed,male,female,active,recovered,death from state_cases";
+
+	// Result
+	$result = mysqli_query($con, $query);
+
+	while($row = mysqli_fetch_assoc($result)) {
+
+		// Fetching all rows of data one by one
+		fputcsv($output, $row);
+	}
+
+	// Closing tag
+	fclose($output);
+}
+
+//====================================================For country report download====================================
+// Checking data by post method for downloading data as csv file
+if(isset($_POST["admin_country_export"])) {
+
+	// Connect to our data base
+
+	// Accept csv or text files
+	header('Content-Type: text/csv; charset=utf-8');
+
+	// Download csv file as coronastatus.csv
+	header('Content-Disposition:attachment; filename=coronastatus.csv');
+
+	// Storing data
+	$output = fopen("php://output", "w");
+
+	// Placing data using fputcsv
+	fputcsv($output, array('country_code','country','confirmed','male','female','active','recovered','death'));
+
+	// SQL query to fetch data from our table
+	$query = "SELECT country_code,country,confirmed,male,female,active,recovered,death from country_cases";
 
 	// Result
 	$result = mysqli_query($con, $query);
