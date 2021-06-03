@@ -4,18 +4,16 @@
 // for admin login
 if(isset($_POST['admin_login']))
 {
-	
-	$userid = $_POST['userid'];
-	$password = $_POST['password'];
-
-		if($userid=='admin' && $password=='admin@123')
-		{
-		   header('location:../dashboard.php');
-		}
-	    else
-		{
-			header('location:../../loginfail.html');
-		}
+  $userid = $_POST['userid'];
+  $password = $_POST['password'];
+  if($userid=='admin' && $password=='admin@123')
+  {
+    header('location:../dashboard.php');
+  }
+  else
+  {
+    header('location:../../loginfail.html');
+   }
 }
 
 
