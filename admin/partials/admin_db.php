@@ -135,7 +135,7 @@ if(isset($_POST['add_state'])){
 	}
 }
 
-// for deleting country wise entries
+// for deleting state wise entries
 if (isset($_POST['state_covid_delete']))
 {
 	$id_delete=$_POST['id'];
