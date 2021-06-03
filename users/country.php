@@ -1,4 +1,5 @@
 <?php include('partials/user-nav.php');?>
+<?php include('../admin/partials/states_insert.php');?>
 <?php include('../admin/partials/countrys_insert.php');?>
 <?php
     if(isset($_POST['search']))
