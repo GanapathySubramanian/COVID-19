@@ -1,6 +1,6 @@
 <?php
     $confirmed=0;$male=0;$female=0;$active=0;$death=0;$recovered=0;
-    $query= "SELECT * FROM country_cases";
+    $query= "SELECT * FROM disrtict_cases";
     $query_run= mysqli_query($con, $query);   
     while($row=mysqli_fetch_array($query_run)){
         $confirmed=$confirmed+$row['confirmed'];
