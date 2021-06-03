@@ -11,10 +11,10 @@
         $recovered=$recovered+$row['recovered'];
     }
 
-    $date_query= "SELECT updated_at FROM country_cases where updated_at>=CURDATE()";
+    $date_query= "SELECT date FROM district_cases order by date limit 1";
     $date_query_run= mysqli_query($con, $date_query);   
     while($row=mysqli_fetch_array($date_query_run)){
-        $date=$row['updated_at'];
+        $date=$row['date'];
     }
     ?>
 <div class="row text-center">
