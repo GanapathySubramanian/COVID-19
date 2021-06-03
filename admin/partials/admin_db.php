@@ -64,7 +64,7 @@ if(isset($_POST['update_covid_data'])){
 	$e_recovered=$_POST['edit_recovered'];
 	$e_death=$_POST['edit_death'];
 
-	$query="UPDATE district_cases set state_code='$es_code',districts='$e_district',confirmed='$e_confirmed',male='$e_male',female='$e_female',active='$e_active',recovered='$e_recovered',death='$e_death' WHERE id='$e_id'";
+	$query="UPDATE district_cases set state_code='$es_code',districts='$e_district',confirmed='$e_confirmed',male='$e_male',female='$e_female',active='$e_active',recovered='$e_recovered',death='$e_death',date=CURDATE() WHERE id='$e_id'";
 	$data=mysqli_query($con,$query);
 
 	if($data)
