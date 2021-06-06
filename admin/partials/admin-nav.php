@@ -99,7 +99,7 @@
                             <span class="nav__name">District Status</span>
                         </a>
                         <a href="../admin/uploadcsv.php" class="nav__link admin_nav_link">
-                        <i class='bx bx-user nav__icon' ></i>
+                        <i class='bx bxs-cloud-upload'></i>
                             <span class="nav__name">Upload Csv</span>
                         </a>
                     </div>
