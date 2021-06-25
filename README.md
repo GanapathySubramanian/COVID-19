@@ -39,5 +39,5 @@ Visit : [Live demo](https://ganapathyda-covid-19.000webhostapp.com/)
   The XAMPP Control Panel allows you to manually start and stop Apache and MySQL. To start Apache or MySQL manually, click the ‘Start’ button under ‘Actions’.
   
   
-<p align="center"><img src="https://user-images.githubusercontent.com/60843507/120350560-b9e18f80-c31c-11eb-9be1-ac5e7e4592d1.PNG"></p>
+<p align="center"><img src="https://media.giphy.com/media/vE90rS84wTFkLVip77/giphy.gif"></p>
 
