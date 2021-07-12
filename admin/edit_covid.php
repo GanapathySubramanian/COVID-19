@@ -40,7 +40,7 @@ $death=$_POST['death'];
 <body>
       <!-- Back Navigation -->
       <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="/COVID19/admin/districts.php"><i class="fas fa-backward"></i> Back</a>
+        <a class="navbar-brand" href="districts.php"><i class="fas fa-backward"></i> Back</a>
     </nav>
 
     
