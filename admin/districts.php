@@ -90,11 +90,7 @@
             <button class="btn btn-primary ml-2" type="submit" name="search">Search</button>
         </form>
     </nav>
-    <form method="post" class="ml-3" action="partials/admin_db.php">
-		<input type="submit" name="admin_district_export" value="District report" class="btn btn-success mt-3" />
-	</form>
-	<label class="text-primary font-weight-bold"> Select No.of.rows to display :</label>
-      <select class="form-control" name="state" id="maxRows">
+    <select class  ="form-control" name="state" id="maxRows">
 		<option value="5000">Show ALL Rows</option>
 		<option value="5">5</option>
 		<option value="10">10</option>
@@ -122,12 +118,12 @@
             </thead>
 
             <?php 
-            
+          
             while($row = mysqli_fetch_array($search_result)):
-           
+            
             ?>
                 <tr>
-                
+                   
                     <td><?php echo $row['state_code']?></td>
                     <td><?php echo $row['districts']?></td>
                     <td><?php echo $row['confirmed']?></td>
@@ -153,19 +149,21 @@
                 </tr>
             <?php endwhile;?>
         </table>
-    </div>
+
         
-         <div class='pagination-container mt-2'>
-            <nav>
-                <ul class="pagination">
-                   <li class="page-item" style="cursor:pointer;" data-page="prev" ><span class="page-link"> < <span class="sr-only">(current)</span></span></li>
+        </div>
+        
+        <div class='pagination-container mt-2'>
+                <nav>
+                  <ul class="pagination">
+                     <li class="page-item" style="cursor:pointer;" data-page="prev" ><span class="page-link"> < <span class="sr-only">(current)</span></span></li>
                    <!--	Here the JS Function Will Add the Rows -->
                     <li class="page-item" style="cursor:pointer;"  data-page="next" id="prev"><span class="page-link"> > <span class="sr-only">(current)</span></span></li>
-                </ul>
-            </nav>
+                  </ul>
+                </nav>
         </div>
                 
-</div>
+        </div>
 <?php
 if (isset($_GET['id'])) {
     include('../includes/db_connect.php');
@@ -189,8 +187,9 @@ if (isset($_GET['id'])) {
             <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Edit District Cases</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                <a href="districts.php" type="button" class="close">
+                        <span aria-hidden="true">&times;</span>
+                    </a>
                 </button>
             </div>
             <form method="POST" action="partials/admin_db.php" enctype="multipart/form-data">
@@ -232,7 +231,7 @@ if (isset($_GET['id'])) {
                         <input type="text" class="form-control" placeholder="Enter the Death Cases" name="edit_death" id="edit_death" value="'.$district['death'].'">
                     </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    <a class="btn btn-info" href="districts.php">Close</a>
                     <button type="submit" class="btn btn-primary"name="update_covid_data">Update data</button>
                 </div>
             </form>
