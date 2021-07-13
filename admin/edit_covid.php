@@ -81,7 +81,7 @@ $death=$_POST['death'];
 		        <label class="text-primary mt-2">Active Cases :</label>
 		        <input type="text" name="edit_active" class="signup-input-field" placeholder="Enter Active Cases"value='<?php echo $active?>' required>
 		        
-		        <label class="text-primary">Recovered Cases :</label>
+		        <label class="text-primary mt-2">Recovered Cases :</label>
 		        <input type="text" name="edit_recovered" class="signup-input-field" placeholder="Enter Recovered Cases"value='<?php echo $recov?>' required>
 		        
 		        <label class="text-primary mt-2">Death Cases :</label>
