@@ -90,11 +90,25 @@
             <button class="btn btn-primary ml-2" type="submit" name="search">Search</button>
         </form>
     </nav>
+    <form method="post" class="ml-3" action="partials/admin_db.php">
+		<input type="submit" name="admin_district_export" value="District report" class="btn btn-success mt-3" />
+	</form>
+	<label class="text-primary font-weight-bold"> Select No.of.rows to display :</label>
+      <select class="form-control" name="state" id="maxRows">
+		<option value="5000">Show ALL Rows</option>
+		<option value="5">5</option>
+		<option value="10">10</option>
+		<option value="15">15</option>
+		<option value="20">20</option>
+		<option value="50">50</option>
+		<option value="70">70</option>
+		<option value="100">100</option>
+    </select>
     <div class="table-responsive">
-        <table class="content-table table">
+        <table class="content-table table" id="table-id">
             <thead>
                 <tr>
-                    <th>SNO</th>
+                    
                     <th>STATE_CODE</th>
                     <th>DISTRICTS</th>
                     <th>CONFIRMED</th>
@@ -108,12 +122,12 @@
             </thead>
 
             <?php 
-            $count=0;
+            
             while($row = mysqli_fetch_array($search_result)):
-            $count+=1;
+           
             ?>
                 <tr>
-                    <td><?php echo $count;?></td>
+                
                     <td><?php echo $row['state_code']?></td>
                     <td><?php echo $row['districts']?></td>
                     <td><?php echo $row['confirmed']?></td>
@@ -140,7 +154,17 @@
             <?php endwhile;?>
         </table>
     </div>
-
+        
+         <div class='pagination-container mt-2'>
+            <nav>
+                <ul class="pagination">
+                   <li class="page-item" style="cursor:pointer;" data-page="prev" ><span class="page-link"> < <span class="sr-only">(current)</span></span></li>
+                   <!--	Here the JS Function Will Add the Rows -->
+                    <li class="page-item" style="cursor:pointer;"  data-page="next" id="prev"><span class="page-link"> > <span class="sr-only">(current)</span></span></li>
+                </ul>
+            </nav>
+        </div>
+                
 </div>
 <?php
 if (isset($_GET['id'])) {
