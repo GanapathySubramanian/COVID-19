@@ -36,7 +36,20 @@ $death=$_POST['death'];
     <link rel="shortcut icon" href="assets/img/logo.png">
 
     <title>COVID-19 | Edit</title>
-</head>
+    <style>
+        .signup-formbox{
+    font-family: sans-serif;
+    height: 840px;
+    width: 430px;
+    position: relative;
+    margin: 2% auto;
+    background: #fff;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 9px #ff61241f;
+}
+    </style>
+    </head>
 <body>
       <!-- Back Navigation -->
       <nav class="navbar navbar-light bg-light">
@@ -53,12 +66,25 @@ $death=$_POST['death'];
             <form action="partials/admin_db.php" method="post" id="login1" class="signup-input-group" autocomplete="off">	
 		        <input type="hidden" name="edit_id" class="signup-input-field"  value='<?php echo $id?>'readonly>
 		        <input type="hidden" name="edit_statecode" class="signup-input-field"  value='<?php echo $state_c?>'readonly>
-		        <input type="text" name="edit_dis" class="signup-input-field"  value='<?php echo $dis?>'readonly>
+		        <label class="text-primary">District Name :</label>
+		        <input  type="text" name="edit_dis" class="signup-input-field"  placeholder="Enter District Name" value='<?php echo $dis?>'readonly>
+		        
+		        <label class="text-primary mt-2">Confirmed Cases :</label>
 		        <input type="text" name="edit_confirmed" class="signup-input-field" placeholder="Enter Confirmed Cases" value='<?php echo $confirm?>' required>
+		        
+		        <label class="text-primary mt-2">Male Cases :</label>
 		        <input type="text" name="edit_male" class="signup-input-field" placeholder="Enter Male Cases" value='<?php echo $male?>' required>
+		        
+		        <label class="text-primary mt-2">Female Cases :</label>
 		        <input type="text" name="edit_female" class="signup-input-field" placeholder="Enter Female Cases" value='<?php echo $female?>'required>
+		        
+		        <label class="text-primary mt-2">Active Cases :</label>
 		        <input type="text" name="edit_active" class="signup-input-field" placeholder="Enter Active Cases"value='<?php echo $active?>' required>
+		        
+		        <label class="text-primary">Recovered Cases :</label>
 		        <input type="text" name="edit_recovered" class="signup-input-field" placeholder="Enter Recovered Cases"value='<?php echo $recov?>' required>
+		        
+		        <label class="text-primary mt-2">Death Cases :</label>
 		        <input type="text" name="edit_death" class="signup-input-field" placeholder="Enter Death Cases"value='<?php echo $death?>' required>
                 <center>
                     <button type="submit" style="outline:none"  class="signup-submit mt-2" name="update_covid_data">Update data</button>
