@@ -1,6 +1,7 @@
 # COVID-19
-   A web-based application that helps the users to view the covid status and the user can log in only when the admin accepts their request 
-   the admin will add the districts wise details as csv file or manual the state wise and country wise details will be calculated based on district wise and that details will       be viewed by the users and the user can  edit their account.
+   A  web-based application that helps the users to view the covid cases after signin, the user can sign-in and view the status of covid-19 over districts,countries and states only when the administrator accept there login request.
+The admin will add the districts wise details as csv file or manual, the state wise and country wise COVID-19 status will be calculated based on district wise entries.
+The user can able to view only the details which has been updated by the administrator, The administrator can able to add,edit and delete the district wise details, the state wise and country wise details will be modified when ever a changes happen in district wise details list.
 
 Visit : [Live demo](https://ganapathyda-covid-19.000webhostapp.com/)
 ## Prerequisites
