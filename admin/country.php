@@ -72,11 +72,22 @@
     <form method="post" class="ml-3" action="partials/admin_db.php">
 		<input type="submit" name="admin_country_export" value="Country report" class="btn btn-success mt-3" />
 	</form>
+	<label class="text-primary font-weight-bold"> Select No.of.rows to display :</label>
+	<select class="form-control" name="state" id="maxRows">
+		<option value="5000">Show ALL Rows</option>
+		<option value="5">5</option>
+		<option value="10">10</option>
+		<option value="15">15</option>
+		<option value="20">20</option>
+		<option value="50">50</option>
+		<option value="70">70</option>
+		<option value="100">100</option>
+    </select>
     <div class="table-responsive">
-        <table class="content-table table">
+        <table class="content-table table" id="table-id">
             <thead>
                 <tr>
-                    <th>SNO</th>
+                   
                     <th>COUNTRY_CODE</th>
                     <th>COUNTRY</th>
                     <th>CONFIRMED</th>
@@ -85,20 +96,17 @@
                     <th>ACTIVE</th>
                     <th>RECOVERED</th>
                     <th>DEATH</th>
-                    <th>UPDATED_AT</th>
                     <th>ACTION</th>
                 </tr>
             </thead>
 
             <?php 
-            $count=0;
-            while($row = mysqli_fetch_array($search_result)):
-            $count+=1;
             
+            while($row = mysqli_fetch_array($search_result)):
+           
             ?>
 
                 <tr>
-                    <td><?php echo $count;?></td>
                     <td><?php echo $row['country_code']?></td>
                     <td><?php echo $row['country']?></td>
                     <td><?php echo $row['confirmed']?></td>
@@ -107,7 +115,6 @@
                     <td><?php echo $row['active']?></td>
                     <td><?php echo $row['recovered']?></td>
                     <td><?php echo $row['death']?></td>
-                    <td><?php echo $row['updated_at']?></td>
                 <td>
                 <div class="d-flex">
                         <form method="POST" action='partials/admin_db.php'>
@@ -122,6 +129,16 @@
                 <?php endwhile; ?>
         </table>
     </div>
+    
+     <div class='pagination-container mt-2'>
+            <nav>
+                <ul class="pagination">
+                   <li class="page-item" style="cursor:pointer;" data-page="prev" ><span class="page-link"> < <span class="sr-only">(current)</span></span></li>
+                   <!--	Here the JS Function Will Add the Rows -->
+                    <li class="page-item" style="cursor:pointer;"  data-page="next" id="prev"><span class="page-link"> > <span class="sr-only">(current)</span></span></li>
+                </ul>
+            </nav>
+        </div>
 
 </div>
 
