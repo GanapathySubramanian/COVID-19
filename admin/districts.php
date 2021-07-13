@@ -25,9 +25,8 @@
  
     <nav class="navbar navbar-light">
         <a class="navbar-brand text-primary font-weight-bold" href="#"><h3>District Wise Status</h3></a>
-         
         <form class="d-flex">
-            <button type="button" class="btn btn-primary ml-1" name="add_district" data-toggle="modal" data-target="#AdddistrictModal" data-whatever="@mdo">Add District</button>
+            <button type="button" class="btn btn-primary ml-2" name="add_district" data-toggle="modal" data-target="#AdddistrictModal" data-whatever="@mdo">Add District</button>
         </form>
 
         <!-- Add district modal -->
@@ -87,13 +86,10 @@
 
 
         <form class="d-flex"  action="" method="POST" autocomplete="off">
-            <input class="form-control" type="search" name="valueToSearch" placeholder="Value To Search" aria-label="Search">
+            <input class="form-control me-2" type="search" name="valueToSearch" placeholder="Value To Search" aria-label="Search">
             <button class="btn btn-primary ml-2" type="submit" name="search">Search</button>
         </form>
     </nav>
-    <form method="post" class="ml-3" action="partials/admin_db.php">
-	    <input type="submit" name="admin_district_export" value="District report" class="btn btn-success " />
-	</form>
     <div class="table-responsive">
         <table class="content-table table">
             <thead>
@@ -128,19 +124,9 @@
                     <td><?php echo $row['death']?></td>
                     <td>
                     <div class="d-flex">
-                        <form method="POST" action='edit_covid.php'>
+                        <form method="GET" action=''>
                             <input type='hidden' name='id' value='<?php echo $row['id'] ?>'/>
-                            <input type='hidden' name='s_c' value='<?php echo $row['state_code'] ?>'/>
-                            <input type='hidden' name='dis' value='<?php echo $row['districts'] ?>'/>
-                            <input type='hidden' name='confirm' value='<?php echo $row['confirmed'] ?>'/>
-                            <input type='hidden' name='male' value='<?php echo $row['male'] ?>'/>
-                            <input type='hidden' name='female' value='<?php echo $row['female'] ?>'/>
-                            <input type='hidden' name='active' value='<?php echo $row['active'] ?>'/>
-                            <input type='hidden' name='recovered' value='<?php echo $row['recovered'] ?>'/>
-                            <input type='hidden' name='death' value='<?php echo $row['death'] ?>'/>
-                            <?php
-                            echo "<input class='btn btn-primary btn-sm' type='submit' style='outline:none' name='covid_edit'  value='Edit'/>";
-                            ?>
+                            <a href="districts.php?id=<?php echo $row['id']?>" name='covid_edit' class="px-3 btn btn-primary btn-sm">Edit</a>
                         </form> 
                         <form method="POST" action='partials/admin_db.php'>
                             <input type='hidden' name='id' value='<?php echo $row['id'] ?>'/>
@@ -156,7 +142,81 @@
     </div>
 
 </div>
+<?php
+if (isset($_GET['id'])) {
+    include('../includes/db_connect.php');
+   
+    $id = $_GET["id"];
+    $district_cases = mysqli_query($con, "SELECT * FROM district_cases WHERE id = '$id'");
+    $district = mysqli_fetch_assoc($district_cases);
+   
 
+    echo '<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#Editdistrict_status").modal(); 
+        });
+    </script>
+        ';
+    echo '
+<!-- Edit district modal -->
+<div class="modal fade" id="Editdistrict_status" tabindex="-1"role="dialog" aria-labelledby="EditdistrictModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit District Cases</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="POST" action="partials/admin_db.php" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">District Id :</label>
+                        <input type="text" class="form-control" name="edit_id" value="'.$id.'" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">State Code :</label>
+                        <input type="text" class="form-control" placeholder="Enter the State Code" name="edit_statecode" id="edit_statecode" value="'.$district['state_code'].'">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">District Name :</label>
+                        <input type="text" class="form-control" placeholder="Enter the District Name" name="edit_dis" id="edit_dis" value="'.$district['districts'].'">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Confirmed Cases :</label>
+                        <input type="text" class="form-control" placeholder="Enter the Confirmed Cases" name="edit_confirmed" id="edit_confirmed" value="'.$district['confirmed'].'">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Male Cases :</label>
+                        <input type="text" class="form-control" placeholder="Enter the Male Cases" name="edit_male" id="edit_male" value="'.$district['male'].'">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Female Cases :</label>
+                        <input type="text" class="form-control" placeholder="Enter the Female Cases" name="edit_female" id="edit_female" value="'.$district['female'].'">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Active Cases :</label>
+                        <input type="text" class="form-control" placeholder="Enter the Active Cases" name="edit_active" id="edit_active" value="'.$district['active'].'">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Recovered Cases :</label>
+                        <input type="text" class="form-control" placeholder="Enter the Recovered Cases" name="edit_recovered" id="edit_recovered" value="'.$district['recovered'].'">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Death Cases :</label>
+                        <input type="text" class="form-control" placeholder="Enter the Death Cases" name="edit_death" id="edit_death" value="'.$district['death'].'">
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary"name="update_covid_data">Update data</button>
+                </div>
+            </form>
+            </div>
+        </div>
+        </div>';
+}
+?>
 <script>
 	function Delete_covid(){
 		return confirm('Are You Sure You Want Delete this district');
