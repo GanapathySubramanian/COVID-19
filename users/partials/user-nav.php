@@ -69,7 +69,7 @@
              
             
              <div class="">
-                <a href="../user_signin.html" class="nav__link user_nav_link text-danger mt-3">
+                <a href="../includes/logout.php?user=user" class="nav__link user_nav_link text-danger mt-3">
                     <i class='bx bx-log-out nav__icon' ></i>
                     <span class="nav__name">Logout</span>
                 </a>
