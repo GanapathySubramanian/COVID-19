@@ -1,6 +1,11 @@
 <?php
     include('../includes/db_connect.php');
     session_start();
+   if(!isset($_SESSION['EMAILID']))
+    {
+        header('location:../user_signin.html');
+    }
+    else{
     $loggeduser_email=$_SESSION['EMAILID'];
 
     $loggeduser_name;$loggeduser_phone;$loggeduser_status;
@@ -13,9 +18,9 @@
         $loggeduser_status=$row['status'];;
         $loggeduser_password=base64_decode($row['password']);
     }
+    }
     
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
