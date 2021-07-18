@@ -53,7 +53,7 @@
 
             
              <div class="mt-3">
-                <a href="../admin_signin.html" class="nav__link  admin_nav_link text-danger">
+                <a href="../includes/logout.php?user=admin" class="nav__link  admin_nav_link text-danger">
                     <i class='bx bx-log-out nav__icon' ></i>
                     <span class="nav__name">Logout</span>
                 </a>
