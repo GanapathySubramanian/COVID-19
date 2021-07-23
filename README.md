@@ -6,10 +6,10 @@ The user can able to view only the details which has been updated by the adminis
 Visit : [Live demo](https://ganapathyda-covid-19.000webhostapp.com/)
 
 <h1>login credentials</h1>
-  ### Admin
+ Admin
    <p>Userid : admin</p>
    <p>Password : admin@123</p>
-  ### User
+ User
    <p>Email : gana@gmail.com</p>
    <p>Password : 123</p>
   
