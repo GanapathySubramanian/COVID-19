@@ -6,12 +6,10 @@ The user can able to view only the details which has been updated by the adminis
 Visit : [Live demo](https://ganapathyda-covid-19.000webhostapp.com/)
 
 <h1>login credentials</h1>
- Admin
-   <p>Userid : admin</p>
-   <p>Password : admin@123</p>
- User
-   <p>Email : gana@gmail.com</p>
-   <p>Password : 123</p>
+ <h3>Admin</h3>
+   <p>Userid : admin<br>Password : admin@123</p>
+ <h3>User</h3>
+   <p>Email : gana@gmail.com<br>Password : 123</p>
   
 ## Prerequisites
 1. Install XAMPP web server
