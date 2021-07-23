@@ -4,6 +4,15 @@ The admin will add the districts wise details as csv file or manual, the state w
 The user can able to view only the details which has been updated by the administrator, The administrator can able to add,edit and delete the district wise details, the state wise and country wise details will be modified when ever a changes happen in district wise details list.
 
 Visit : [Live demo](https://ganapathyda-covid-19.000webhostapp.com/)
+
+## login credentials
+  ### Admin
+   <p>Userid : admin</p>
+   <p>Password : admin@123</p>
+   ### User
+   <p>Email : gana@gmail.com</p>
+   <p>Password : 123</p>
+  
 ## Prerequisites
 1. Install XAMPP web server
 2. Any Editor (Preferably VS Code or Brackets Text Editor)
